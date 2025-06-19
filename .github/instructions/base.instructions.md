@@ -1,3 +1,7 @@
+---
+applyTo: '**'
+---
+
 # GitHub Copilot 基本指示
 
 ## 基本的な開発方針

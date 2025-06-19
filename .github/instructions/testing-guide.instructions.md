@@ -1,3 +1,7 @@
+---
+applyTo: '**'
+---
+
 # テスト指針
 
 ## テスト戦略
@@ -104,10 +108,10 @@ class TestCalculator:
     def test_add_positive_numbers(self):
         # Arrange
         a, b = 2, 3
-        
+
         # Act
         result = self.calculator.add(a, b)
-        
+
         # Assert
         assert result == 5
 
@@ -154,7 +158,7 @@ class UserModelTest(TestCase):
             name='Test User',
             email='test@example.com'
         )
-        
+
         self.assertEqual(user.name, 'Test User')
         self.assertTrue(user.email, 'test@example.com')
 ```
@@ -169,14 +173,14 @@ const { test, expect } = require('@playwright/test');
 test('user login flow', async ({ page }) => {
   // ログインページに移動
   await page.goto('/login');
-  
+
   // 認証情報を入力
   await page.fill('#email', 'user@example.com');
   await page.fill('#password', 'password123');
-  
+
   // ログインボタンをクリック
   await page.click('#login-button');
-  
+
   // ダッシュボードに遷移することを確認
   await expect(page).toHaveURL('/dashboard');
   await expect(page.locator('h1')).toContainText('Dashboard');
@@ -219,7 +223,7 @@ class UserFactory {
 ```javascript
 // 外部APIのモック例
 jest.mock('./api-client', () => ({
-  fetchUserData: jest.fn(() => 
+  fetchUserData: jest.fn(() =>
     Promise.resolve({
       id: 1,
       name: 'Mock User'

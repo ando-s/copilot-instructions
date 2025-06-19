@@ -1,3 +1,7 @@
+---
+applyTo: '**'
+---
+
 # ドキュメント規約
 
 ## ドキュメント作成の基本原則
@@ -174,7 +178,7 @@ async function getUser(userId, options = {}) {
 
   // データベースからユーザー情報を取得
   const user = await User.findById(userId);
-  
+
   if (!user) {
     throw new NotFoundError(`User not found: ${userId}`);
   }
@@ -193,39 +197,39 @@ async function getUser(userId, options = {}) {
 class UserService:
     """
     ユーザー管理を行うサービスクラス
-    
+
     このクラスはユーザーの作成、更新、削除などの
     ビジネスロジックを担当します。
-    
+
     Attributes:
         db_session: データベースセッション
         logger: ログ出力用オブジェクト
     """
-    
+
     def __init__(self, db_session, logger):
         """
         UserServiceの初期化
-        
+
         Args:
             db_session: データベースセッション
             logger: ログ出力用オブジェクト
         """
         self.db_session = db_session
         self.logger = logger
-    
+
     def create_user(self, user_data):
         """
         新しいユーザーを作成する
-        
+
         Args:
             user_data (dict): ユーザー情報
                 - name (str): ユーザー名
                 - email (str): メールアドレス
                 - password (str): パスワード
-        
+
         Returns:
             User: 作成されたユーザーオブジェクト
-        
+
         Raises:
             ValidationError: 入力データが不正な場合
             DuplicateError: 既に存在するメールアドレスの場合
