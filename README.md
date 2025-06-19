@@ -57,6 +57,7 @@ GitHub Copilotを使用したプロジェクト開発において、一貫性の
 copilot-instructions/
 ├── README.md                                    # このファイル
 └── .github/                                     # GitHub Copilot指示ファイル群
+  └─ instructions/
     ├── base-instructions.md                     # 基本指示（常時適用）
     ├── copilot-rule-creation.md                # Copilotルール作成エージェント
     ├── requirements-specification.md            # 要件定義書作成エージェント
